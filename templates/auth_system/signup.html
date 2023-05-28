@@ -1,0 +1,25 @@
+{% extends 'auth_system/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>SIGNUP</h2><br>
+
+    {% if error %}
+      <div class="alert alert-danger">
+        {{ error }}<br>
+      </div>
+    {% endif %}
+
+    <form method="POST">
+      {% csrf_token %}
+      Nazwa użytkownika:<br>
+      <input type="text" name="username"><br><br>
+      Hasło:<br>
+      <input type="password" name="password1"><br><br>
+      Potwierdź hasło:<br>
+      <input type="password" name="password2"><br><br>
+
+      <input class="btn btn-primary" type="submit" value="Zarejestruj">
+    </form>
+  </div>
+{% endblock %}
